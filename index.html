@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TodoPomo - Todo list with Pomodoro Technique</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="TodoPomo is an online todo list and timer tool that uses pomodoro technique. It helps to have focus while doing any task. The timer is customizable and divided into task section and break section. Theres is a music section so you can listen to music while doing tasks.">
+	<meta name="og:title" property="og:title" content="TodoPomo - Todo list with Pomodoro Technique">
+	<meta name="og:description" property="og:description" content="TodoPomo is an online todo list and timer tool that uses pomodoro technique. It helps to have focus while doing any task.">
+	<meta name="og:image" property="og:image" content="img/todopomo-todolist-pomodoro.png">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="TodoPomo - Todo list with Pomodoro Technique">
+	<meta name="twitter:description" content="TodoPomo is an online todo list and timer tool that uses pomodoro technique. It helps to have focus while doing any task.">
+	<meta name="twitter:image" content="img/todopomo-todolist-pomodoro.png">
+	<link rel="icon" href="img/todopomo-icon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/music.css">
+	<link rel="stylesheet" type="text/css" href="css/faq.css">
+	<link rel="stylesheet" type="text/css" href="css/settings.css">
+</head>
+<body>
+	<div class="settings-sec-outer">
+		<div class="settings-sec">
+			<div class="settings-cross-btn">
+				<i class="fas fa-times"></i>
+			</div>
+			<div class="settings-title">Settings</div>
+			<div class="task-settings settings-horizons">
+				<div class="settings-text">Task time</div>
+				<input class="task-input" type="number" min="1" max="60" value="25">
+			</div>
+			<div class="break-settings settings-horizons">
+				<div class="settings-text">Break time</div>
+				<input class="break-input" type="number" min="1" max="15" value="5">
+			</div>
+			<div class="auto-pomo settings-horizons">
+				<div class="settings-text">Auto switch to Task</div>
+				<label class="switch">
+					<input id="task-checkbox" type="checkbox" checked="true">
+					<span class="slider round"></span>
+				</label>
+			</div>
+			<div class="auto-break settings-horizons">
+				<div class="settings-text">Auto switch to Break</div>
+				<label class="switch">
+					<input id="break-checkbox" type="checkbox" checked="true">
+					<span class="slider round"></span>
+				</label>
+			</div>
+			<div class="noti-sound settings-horizons">
+				<div class="sound-text">Enable notification sounds</div>
+				<label class="switch">
+					<input id="sound-checkbox" type="checkbox" checked="true">
+					<span class="slider round"></span>
+				</label>
+			</div>
+			<div class="mode settings-horizons">
+				<div class="mode-text">Switch to dark mode</div>
+				<label class="switch">
+					<input id="mode-checkbox" type="checkbox">
+					<span class="slider round"></span>
+				</label>
+			</div>
+			<button class="default-btn">Set to Default</button>
+		</div>
+	</div>
+
+	<div class="music-sec-outer">
+		<audio></audio>
+		<div class="music-sec">
+			<div class="music-cross-btn">
+				<i class="fas fa-times"></i>
+			</div>
+			<div class="music-sec-title">Musics</div>
+			<div class="songs">
+			</div>
+		</div>
+	</div>
+	
+	<audio></audio>
+	<div class="music-controller">
+		<div class="control-btns">
+			<i class="fas fa-backward" id="previous"></i>
+			<i class="fas fa-play-circle" id="controller-play-pause"></i>
+			<i class="fas fa-forward" id="next"></i>
+		</div>
+		<div class="controller-middle">
+			<div class="progress-container">
+			<div class="progress"></div>
+		</div>
+		<div class="music-time-sec">
+			<span class="current-time">00:00</span>
+			<span class="slash">/</span>
+			<span class="music-time">00:00</span>
+		</div>
+		</div>
+		<div class="music-volume">
+			<i class="fas fa-volume-up"></i>
+			<input  class="volume-input" type="range" min="0" max="10" value="5">
+		</div>
+	</div>
+
+	<div class="faq-sec-outer">
+		<div class="faq-sec">
+			<div class="faq-cross-btn">
+				<i class="fas fa-times"></i>
+			</div>
+			<div class="faq-title">QnAs</div>
+			<div class="accordion-sec">
+				<div class="accordion">
+					<div class="row1">
+						<div class="topic">
+							<p>What is TodoPomo?</p>
+						</div>
+						<div class="btn">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="row2">
+						<p>TodoPomo is a timer plus todo list tool that uses pomodoro technique. It uses timer to divide tasks into intervals. The task timer is usually 25 minutes (customizable) and the break timer is usually 5 mins long(customizable). After completion of every task interval, you get a break.</p>
+					</div>
+				</div>
+				<div class="accordion">
+					<div class="row1">
+						<div class="topic">
+							<p>How to use this tool?</p>
+						</div>
+						<div class="btn">
+							<i class="fas fa-plus"></i>
+						</div>
+					</div>
+					<div class="row2">
+						<p>TodoPomo is a simple to use tool. You can start the task timer with the time of your choice. Add todo lists and complete the tasks. Task timer as well as break timer are customizable.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="header">
+		<h1 class="title">TodoPomo</h1>
+		<div class="right-sides">
+			<div class="faq-btn">
+				<i class="fas fa-question"></i>
+			</div>
+			<div class="music-btn">
+				<i class="fas fa-music"></i>
+			</div>
+			<div class="settings-btn">
+				<i class="fas fa-cog"></i>
+			</div>
+		</div>
+	</div>
+
+	<div class="timer-container">
+		<div class="timer-upper">
+			<div class="task-txt active">Task</div>
+			<div class="break-txt">Break</div>
+		</div>
+		<div class="timer-middle">
+			<div class="timer"><span class="min-time">25</span> : <span class="sec-time">00</span></div>
+		</div>
+		<div class="timer-lower">
+			<button class="start-btn">Start</button>
+			<button class="reset-btn">Reset</button>
+		</div>
+	</div>
+
+	<div class="todo-container">
+		<div class="input-container">
+			<input class="todo-input" type="text" placeholder="Type a todo...">
+			<button class=add-btn>Add</button>
+		</div>
+		<div class="todos">
+		</div>
+	</div>
+	<div class="controller-display-btn">
+		<i class="fas fa-chevron-down"></i>
+	</div>
+
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/faq.js"></script>
+	<script type="text/javascript" src="js/music.js"></script>
+	<script type="text/javascript" src="js/settings.js"></script>
+	<script type="text/javascript" src="js/mode.js"></script>
+</body>
+</html>

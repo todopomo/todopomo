@@ -1,0 +1,275 @@
+:root{
+	--indTodoBg: rgba(255,255,255,.5);
+	--musicArtistColor: gray;
+}
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	font-size: 1.1rem;
+	font-family: 'Poppins', sans-serif;
+	color: rgba(0,0,0,.7);
+	background: rgb(237,204,218);
+	background: radial-gradient(circle, rgba(237,204,218,1) 0%, rgba(148,187,233,1) 100%);
+}
+.header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 500px;
+	margin: 0 auto;
+	padding: 1rem;
+	border-bottom: 2px solid rgba(0,0,0,.5);
+}
+.right-sides{
+	display: flex;
+	font-size: 1.5rem;
+}
+.right-sides div{
+	cursor: pointer;
+}
+.music-btn{
+	margin: 0 2rem;
+}
+.timer-container{
+	width: 500px;
+	margin: 2rem auto 3rem auto;
+	background: rgba(255,255,255,.5);
+	padding: 0 0 1.25rem 0;
+	border-radius: 7px;
+}
+.timer-upper{
+	display: flex;
+	width: 500px;
+}
+.timer-upper >div{
+	width: 50%;
+	text-align: center;
+	padding: 1rem 0 0.75rem 0;
+	cursor: pointer;
+}
+.task-txt{
+	border-top-left-radius: 7px;
+}
+.break-txt{
+	border-top-right-radius: 7px;
+}
+.active{
+	border-bottom: 2px solid gray;
+	background: rgba(102,157,178,.7);
+	display: flex;
+	align-items: center;
+	/*color: #fff;*/
+    justify-content: center;
+}
+.timer{
+	text-align: center;
+	font-size: 3.5rem;
+	margin: 2rem 0;
+}
+.timer-lower{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: .75rem;
+}
+button{
+	transition: .3s all ease;
+}
+.timer-lower button, .add-btn{
+	cursor: pointer;
+	background: rgba(102,157,178,.6);
+	border: none;
+	outline: none;
+	font-size: 17px;
+	color: rgba(255,255,255);
+}
+.timer-lower button{
+	width: 80px;
+	padding: .5rem 1rem;
+	border-radius: 3px;
+	margin: 0 .25rem;
+}
+.timer-lower button:hover, .add-btn:hover{
+	background: rgb(102,157,178);
+}
+.stop-btn{
+	margin: 0 .5rem;
+}
+.todo-container{
+	width: 500px;
+	margin: auto;
+}
+.input-container{
+	display: flex;
+	justify-content: center;
+}
+.input-container input{
+	width: 440px;
+	height: 40px;
+	padding: 0 .75rem;
+	font-size: 1.1rem;
+	font-style: italic;
+	outline: none;
+	border: 1px solid gray;
+	border-right: none;
+	color: rgba(0,0,0,.85);
+	background: rgba(255,255,255,.5);
+}
+.add-btn{
+	height: 40px;
+	width: 60px;
+	border: 1px solid gray;
+}
+.todos{
+	margin-top: 1.5rem;
+	padding: 1rem;
+	margin-bottom: 4rem;
+}
+.ind-todo{
+	display: flex;
+	align-items: center;
+	margin: .5rem 0;
+	background: var(--indTodoBg);
+	padding: 1rem;
+	border-radius: 3px;
+}
+.tick-circle{
+	margin-right: 1rem;
+}
+#circle{
+	color: gray;
+}
+#tick{
+  display: none;
+  color: gray;
+  animation: tickAnimation .3s;
+}
+@keyframes tickAnimation{
+	from{
+		opacity: .7;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+.artist{
+	font-size: .9rem;
+	color: var(--musicArtistColor);
+	font-style: italic;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #dcdcdc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 23px;
+  left: 0;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.settings-sec{
+	animation: animatetop .4s;
+}
+
+.music-sec{
+	animation: animatetop .4s;
+}
+
+.faq-sec{
+	animation: animatetop .4s;
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 3vh; opacity: 1}
+}
+
+@media (max-width: 505px){
+	.header, .timer-container, .timer-upper, .todo-container{
+		width: 400px;
+	}
+	#tick{
+		left: 5%;
+	}
+}
+@media (max-width: 420px){
+	.header, .timer-container, .timer-upper, .todo-container{
+		width: 350px;
+	}
+	.music-btn{
+		margin: 0 1rem;
+	}
+	#tick{
+		left: 5.9%;
+	}
+}
+@media (max-width: 360px){
+	.header, .timer-container, .timer-upper, .todo-container{
+		width: 325px;
+	}
+	.header{
+		padding: 1rem .75rem;
+	}
+	.music-btn{
+		margin: 0 .75rem;
+	}
+	#tick{
+		left: 6.4%;
+	}
+}
